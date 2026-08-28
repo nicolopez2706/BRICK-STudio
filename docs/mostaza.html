@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Línea Mostaza de HABITARE: cálido y terroso, con carácter propio.">
+
+    <title>Mostaza — Colección HABITARE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <a href="index.html" class="logo">
+        <span class="logo-word">HABITARE</span>
+        <span class="logo-ring"></span>
+    </a>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="coleccion.html" aria-current="page">Colección</a>
+        <a href="disenador.html">Diseñador</a>
+        <a href="como-comprar.html">¿Cómo comprar?</a>
+    </nav>
+
+    <div class="header-right">
+        <button class="open-selection">
+            Mi selección
+            <span class="selection-number">0</span>
+        </button>
+        <button class="menu-toggle" aria-label="Abrir menú"><span></span></button>
+    </div>
+
+</header>
+
+<nav class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="coleccion.html">Colección</a>
+    <a href="disenador.html">Diseñador</a>
+    <a href="como-comprar.html">¿Cómo comprar?</a>
+</nav>
+
+<!-- SELECCIÓN -->
+<div class="selection-backdrop"></div>
+
+<aside class="selection-panel">
+    <div class="selection-top">
+        <div>
+            <small>HABITARE</small>
+            <h2>Mi selección</h2>
+        </div>
+        <button class="close-selection" aria-label="Cerrar">×</button>
+    </div>
+
+    <div class="selection-content"></div>
+
+    <div class="selection-empty">
+        <h3>Todavía no armaste tu selección</h3>
+        <p>Elegí la cantidad y el color de componentes para sumar esta línea.</p>
+    </div>
+
+    <div class="selection-bottom">
+        <div class="selection-count-line"></div>
+        <p>Con tu selección armada, coordinamos cantidades, configuración y tiempos de producción a medida.</p>
+        <a class="quote-btn whatsapp" target="_blank" rel="noopener">SOLICITAR POR WHATSAPP →</a>
+        <a class="quote-btn email">ENVIAR POR EMAIL →</a>
+    </div>
+</aside>
+
+
+<main>
+
+<div style="padding:130px 8vw 0;">
+    <a href="coleccion.html" class="back-link">← VOLVER A LA COLECCIÓN</a>
+</div>
+
+<!-- HERO DE LÍNEA -->
+<section class="linea-hero" style="padding-top:30px;">
+
+    <div class="linea-hero-copy">
+        <div class="linea-swatch">
+            <span class="linea-dot" style="--swatch:#aa9c54"></span>
+            <span class="linea-name">Línea 03</span>
+        </div>
+        <h1>Mostaza</h1>
+        <p>Cálido y terroso, con carácter propio. Un tono que suma calidez sin perder sobriedad.</p>
+    </div>
+
+    <div class="linea-hero-visual">
+        <img src="assets/images/textura-mostaza.webp" alt="Textura del panel HABITARE en línea Mostaza" loading="lazy">
+    </div>
+
+</section>
+
+
+<!-- FICHA TÉCNICA -->
+<section class="ficha-tecnica">
+
+    <img src="assets/images/medidas.webp" alt="Plano técnico del módulo HABITARE con medidas" loading="lazy">
+
+    <div>
+        <span class="overline">FICHA TÉCNICA</span>
+        <div class="ficha-lista" style="margin-top:20px;">
+            <div><span>ANCHO</span><strong>320 mm</strong></div>
+            <div><span>ALTO</span><strong>230 mm</strong></div>
+            <div><span>PROFUNDIDAD</span><strong>170 mm</strong></div>
+            <div><span>COLUMNA COMPLETA</span><strong>2.100 mm</strong></div>
+            <div><span>MATERIAL</span><strong>Esmaltado color verde amarillento</strong></div>
+            <div><span>ACABADO</span><strong>Textura brillante y color jaspeado</strong></div>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- CONFIGURADOR -->
+<section class="configurador" data-linea="mostaza">
+
+    <span class="overline">ARMÁ TU PEDIDO</span>
+    <h2 style="margin-top:16px;font-size:clamp(30px,3.4vw,42px);">Configurá tu línea Mostaza</h2>
+
+    <div class="config-step">
+        <div class="config-step-label">
+            <span class="config-step-number">01</span>
+            <span class="config-step-title">Cantidad de piezas</span>
+        </div>
+        <div class="config-step-body">
+            <div class="config-qty">
+                <div class="linea-qty">
+                    <button data-qty="minus" aria-label="Restar">−</button>
+                    <span>1</span>
+                    <button data-qty="plus" aria-label="Sumar">+</button>
+                </div>
+                <span style="font-size:11px;color:var(--muted);">piezas línea Mostaza</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="config-step">
+        <div class="config-step-label">
+            <span class="config-step-number">02</span>
+            <span class="config-step-title">Color de los componentes</span>
+        </div>
+        <div class="config-step-body">
+            <p style="font-size:11px;color:var(--muted);margin-bottom:18px;line-height:1.7;">
+                Guías y componente telescópico. Disponibles en gris, blanco o negro.
+            </p>
+            <div class="color-options">
+                <button class="color-option-btn active" data-color="gris">
+                    <span class="color-option-swatch" style="--swatch:#8c8c8c;"></span>
+                    Gris
+                </button>
+                <button class="color-option-btn" data-color="blanco">
+                    <span class="color-option-swatch" style="--swatch:#f2f2f2;"></span>
+                    Blanco
+                </button>
+                <button class="color-option-btn" data-color="negro">
+                    <span class="color-option-swatch" style="--swatch:#222222;"></span>
+                    Negro
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="config-step">
+        <div class="config-step-label">
+            <span class="config-step-number">03</span>
+            <span class="config-step-title">Accesorios</span>
+        </div>
+        <div class="config-step-body">
+            <div class="proximamente-box">
+                <img src="assets/images/pieza-con-accesorio.webp" alt="Adelanto de accesorio HABITARE" loading="lazy">
+                <p>
+                    <strong>Próximamente</strong>
+                    Complementos de chapa y madera para equipar tu sistema — regulador de luz, apoyo de objetos y más. Todavía estamos terminando esta sección.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <button class="config-add">Agregar a mi selección</button>
+
+</section>
+
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+
+    <div class="footer-top">
+
+        <div class="footer-col">
+            <span>DIRECCIÓN</span>
+            <p>Av. República de China<br>Valle Escondido<br>Córdoba, Argentina</p>
+        </div>
+
+        <div class="footer-col">
+            <span>CONTACTO</span>
+            <a href="mailto:Habitare@gmail.com">Habitare@gmail.com</a>
+            <a href="https://wa.me/5493513320235" target="_blank" rel="noopener">+54 9 351 332 0235</a>
+        </div>
+
+        <div class="footer-col footer-nav">
+            <span>NAVEGACIÓN</span>
+            <a href="index.html">Home</a>
+            <a href="coleccion.html">Colección</a>
+            <a href="como-comprar.html">¿Cómo comprar?</a>
+        </div>
+
+    </div>
+
+    <div class="footer-word">HABITARE.</div>
+
+    <div class="footer-bottom">
+        <span>MATERIA / COLOR / ARQUITECTURA</span>
+        <span>© 2026 HABITARE</span>
+    </div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

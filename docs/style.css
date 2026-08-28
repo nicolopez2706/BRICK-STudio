@@ -21,13 +21,13 @@
     --line: rgba(51, 41, 31, .16);
     --line-on-taupe: rgba(255, 255, 255, .22);
 
-    /* líneas de producto */
-    --l-aqua: #9caea3;
-    --l-ceniza: #47433d;
-    --l-mostaza: #b6934f;
-    --l-gres: #ab8b6c;
-    --l-hueso: #e9e1d2;
-    --l-terra: #5b4a37;
+    /* líneas de producto — colores reales según ficha de materiales */
+    --l-aqua: #b6d5d4;
+    --l-ceniza: #282627;
+    --l-mostaza: #aa9c54;
+    --l-gres: #c9b190;
+    --l-hueso: #eceeed;
+    --l-terra: #705a4f;
 }
 
 html {
@@ -177,7 +177,7 @@ h1 i, h2 i, h3 i {
 
 .header nav a {
     position: relative;
-    font-size: 10px;
+    font-size: 8px;
     letter-spacing: 1.8px;
     text-transform: uppercase;
 }
@@ -1012,6 +1012,33 @@ body.menu-open .mobile-nav {
     flex: 1;
 }
 
+.linea-card {
+    transition: transform .3s ease;
+}
+
+.linea-card:hover {
+    transform: translateY(-3px);
+}
+
+.linea-cta {
+    margin-top: 22px;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 7px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--ink);
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--line);
+    width: fit-content;
+    transition: border-color .3s;
+}
+
+.linea-card:hover .linea-cta {
+    border-color: var(--ink);
+}
+
 .linea-buy {
     margin-top: 22px;
     display: flex;
@@ -1293,15 +1320,13 @@ body.selection-open .selection-backdrop {
 }
 
 .quote-btn {
-    width: 92%;
-    height: 56px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    height: 48px;
     border: 0;
     background: var(--ink);
     color: var(--cream);
-    font-size: 8px;
-    letter-spacing: 1.7px;
+    font-size: 7px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     margin-top: 10px;
     transition: opacity .3s;
@@ -1313,6 +1338,392 @@ body.selection-open .selection-backdrop {
 
 .quote-btn.whatsapp {
     background: #3f5c4d;
+}
+
+/* =====================================
+   HERO WORDMARK (logo grande en hero)
+===================================== */
+
+.hero-word {
+    margin-top: 40px;
+    font-size: clamp(70px, 10vw, 150px);
+    letter-spacing: -5px;
+}
+
+.hero-tagline {
+    margin-top: 14px;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: clamp(16px, 1.8vw, 22px);
+    color: var(--muted);
+}
+
+/* =====================================
+   QUÉ ES HABITARE (intro)
+===================================== */
+
+.intro {
+    padding: 130px 8vw;
+    background: var(--cream-soft);
+}
+
+.intro h2 {
+    margin-top: 20px;
+    font-size: clamp(46px, 6vw, 82px);
+}
+
+.intro-lead {
+    max-width: 700px;
+    margin-top: 30px;
+}
+
+.intro-lead p:first-child {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: clamp(18px, 2vw, 24px);
+    line-height: 1.5;
+}
+
+.intro-lead p + p {
+    margin-top: 22px;
+    font-size: 12px;
+    line-height: 1.9;
+    color: var(--muted);
+}
+
+.resuelve {
+    margin-top: 90px;
+    padding-top: 40px;
+    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 50px;
+}
+
+.resuelve-copy p {
+    font-size: 12px;
+    line-height: 1.9;
+    color: var(--muted);
+}
+
+.resuelve-copy p + p {
+    margin-top: 14px;
+}
+
+.resuelve-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+}
+
+.resuelve-item {
+    background: var(--cream-soft);
+    padding: 28px;
+}
+
+.resuelve-item .ring {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid var(--ink);
+    display: block;
+}
+
+.resuelve-item h4 {
+    margin-top: 20px;
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.resuelve-item p {
+    margin-top: 10px;
+    font-size: 11px;
+    line-height: 1.75;
+    color: var(--muted);
+}
+
+/* =====================================
+   BACK LINK (páginas de línea)
+===================================== */
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 7px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-bottom: 3px;
+    border-bottom: 1px solid transparent;
+    transition: border-color .3s;
+}
+
+.back-link:hover {
+    border-bottom-color: var(--muted);
+}
+
+/* =====================================
+   LÍNEA — página de detalle
+===================================== */
+
+.linea-hero {
+    padding: 150px 8vw 60px;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 40px;
+    align-items: center;
+}
+
+.linea-hero-copy .linea-swatch {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.linea-hero-copy .linea-dot {
+    width: 20px;
+    height: 20px;
+}
+
+.linea-hero-copy .linea-name {
+    font-size: 20px;
+}
+
+.linea-hero-copy h1 {
+    margin-top: 22px;
+    font-size: clamp(48px, 6vw, 84px);
+    letter-spacing: -3px;
+}
+
+.linea-hero-copy p {
+    margin-top: 22px;
+    max-width: 380px;
+    font-size: 12px;
+    line-height: 1.9;
+    color: var(--muted);
+}
+
+.linea-hero-visual img {
+    width: 100%;
+    border-radius: 3px;
+}
+
+.ficha-tecnica {
+    padding: 90px 8vw;
+    background: var(--cream-soft);
+    display: grid;
+    grid-template-columns: 55% 45%;
+    gap: 50px;
+    align-items: center;
+}
+
+.ficha-tecnica img {
+    width: 100%;
+}
+
+.ficha-lista {
+    border-top: 1px solid var(--line);
+}
+
+.ficha-lista div {
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid var(--line);
+}
+
+.ficha-lista span {
+    font-size: 7px;
+    letter-spacing: 1.2px;
+    color: var(--muted);
+}
+
+.ficha-lista strong {
+    font-size: 12px;
+    font-weight: 400;
+    text-align: right;
+}
+
+/* =====================================
+   CONFIGURADOR
+===================================== */
+
+.configurador {
+    padding: 100px 8vw 130px;
+    max-width: 640px;
+}
+
+.config-step {
+    padding: 34px 0;
+    border-top: 1px solid var(--line);
+}
+
+.config-step:last-of-type {
+    border-bottom: 1px solid var(--line);
+}
+
+.config-step-label {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.config-step-number {
+    font-family: "Playfair Display", serif;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.config-step-title {
+    font-family: "Playfair Display", serif;
+    font-size: 19px;
+}
+
+.config-step-body {
+    margin-top: 20px;
+}
+
+.config-qty {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.config-qty .linea-qty {
+    display: flex;
+    border: 1px solid var(--line);
+}
+
+.config-qty .linea-qty button,
+.config-qty .linea-qty span {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    background: transparent;
+    border: 0;
+    font-size: 11px;
+}
+
+.color-options {
+    display: flex;
+    gap: 14px;
+}
+
+.color-option-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    border: 0;
+    background: transparent;
+    font-size: 8px;
+    letter-spacing: .8px;
+    color: var(--muted);
+}
+
+.color-option-swatch {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--swatch);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .1);
+    position: relative;
+}
+
+.color-option-swatch::after {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    transition: border-color .25s;
+}
+
+.color-option-btn.active .color-option-swatch::after {
+    border-color: var(--ink);
+}
+
+.color-option-btn.active {
+    color: var(--ink);
+}
+
+.proximamente-box {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    padding: 16px;
+    border: 1px dashed var(--line);
+}
+
+.proximamente-box img {
+    width: 64px;
+    flex-shrink: 0;
+    opacity: .6;
+}
+
+.proximamente-box p {
+    font-size: 10.5px;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+.proximamente-box strong {
+    display: block;
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+
+.config-add {
+    width: 100%;
+    height: 52px;
+    border: 0;
+    background: var(--ink);
+    color: var(--cream);
+    font-size: 8px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    margin-top: 40px;
+    transition: opacity .3s;
+}
+
+.config-add:hover {
+    opacity: .8;
+}
+
+.config-add.added {
+    background: var(--taupe-deep);
+}
+
+/* =====================================
+   PROTOTIPO REAL (galería de fotos)
+===================================== */
+
+.prototipo-real {
+    padding: 100px 8vw 130px;
+}
+
+.prototipo-grid {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.prototipo-grid img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 2px;
 }
 
 /* =====================================
@@ -1389,6 +1800,31 @@ body.selection-open .selection-backdrop {
     .contact-methods {
         align-self: start;
         margin-top: 30px;
+    }
+
+    .resuelve {
+        grid-template-columns: 1fr;
+    }
+
+    .resuelve-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .linea-hero {
+        grid-template-columns: 1fr;
+        padding-top: 120px;
+    }
+
+    .linea-hero-visual {
+        margin-top: 20px;
+    }
+
+    .ficha-tecnica {
+        grid-template-columns: 1fr;
+    }
+
+    .prototipo-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -1471,5 +1907,27 @@ body.selection-open .selection-backdrop {
 
     .pull-quote {
         margin-left: 0;
+    }
+
+    .intro,
+    .linea-hero,
+    .ficha-tecnica,
+    .configurador,
+    .prototipo-real {
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+
+    .intro {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    .color-options {
+        flex-wrap: wrap;
+    }
+
+    .prototipo-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

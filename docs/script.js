@@ -7,12 +7,18 @@ const WHATSAPP_NUMBER = "5493513320235"; // +54 9 351 332 0235
 const CONTACT_EMAIL = "Habitare@gmail.com";
 
 const LINEAS = {
-    aqua:     { nombre: "Aqua",     color: "#9caea3" },
-    ceniza:   { nombre: "Ceniza",   color: "#47433d" },
-    mostaza:  { nombre: "Mostaza",  color: "#b6934f" },
-    gres:     { nombre: "Gres",     color: "#ab8b6c" },
-    hueso:    { nombre: "Hueso",    color: "#e9e1d2" },
-    terra:    { nombre: "Terra",    color: "#5b4a37" },
+    aqua:     { nombre: "Aqua",     color: "#b6d5d4" },
+    ceniza:   { nombre: "Ceniza",   color: "#282627" },
+    mostaza:  { nombre: "Mostaza",  color: "#aa9c54" },
+    gres:     { nombre: "Gres",     color: "#c9b190" },
+    hueso:    { nombre: "Hueso",    color: "#eceeed" },
+    terra:    { nombre: "Terra",    color: "#705a4f" },
+};
+
+const COMPONENT_COLORS = {
+    gris:   "Gris",
+    blanco: "Blanco",
+    negro:  "Negro",
 };
 
 /* =====================================
@@ -87,8 +93,10 @@ document.querySelectorAll(".selection-backdrop").forEach(el => {
     el.addEventListener("click", closeSelection);
 });
 
-function addToSelection(lineaKey, cantidad) {
-    const existing = selection.find(item => item.linea === lineaKey);
+function addToSelection(lineaKey, cantidad, componentColor) {
+    componentColor = componentColor || "gris";
+
+    const existing = selection.find(item => item.linea === lineaKey && item.componentColor === componentColor);
 
     if (existing) {
         existing.cantidad += cantidad;
@@ -97,6 +105,7 @@ function addToSelection(lineaKey, cantidad) {
             id: Date.now() + Math.random(),
             linea: lineaKey,
             cantidad: cantidad,
+            componentColor: componentColor,
         });
     }
 
@@ -134,7 +143,8 @@ function buildQuoteText() {
     selection.forEach(item => {
         const linea = LINEAS[item.linea];
         const nombre = linea ? linea.nombre : item.linea;
-        lines.push(`- Pieza línea ${nombre} x${item.cantidad}`);
+        const compColor = COMPONENT_COLORS[item.componentColor] || item.componentColor;
+        lines.push(`- Pieza línea ${nombre} x${item.cantidad} (componentes color ${compColor})`);
     });
 
     return lines.join("\n");
@@ -160,12 +170,14 @@ function renderSelection() {
         const el = document.createElement("div");
         el.className = "selection-item";
 
+        const compColor = COMPONENT_COLORS[item.componentColor] || item.componentColor;
+
         el.innerHTML = `
             <div class="selection-item-dot" style="--swatch:${linea.color}"></div>
             <div>
                 <h4>Pieza HABITARE</h4>
                 <small style="display:block;margin-top:4px;font-size:9px;color:var(--muted);letter-spacing:1px;">
-                    LÍNEA ${linea.nombre.toUpperCase()}
+                    LÍNEA ${linea.nombre.toUpperCase()} · COMPONENTES ${compColor ? compColor.toUpperCase() : ""}
                 </small>
                 <div class="selection-item-controls">
                     <button aria-label="Restar" data-action="minus" data-id="${item.id}">−</button>
@@ -207,17 +219,21 @@ function renderSelection() {
 }
 
 /* =====================================
-   TARJETAS DE LÍNEA (página Colección)
+   CONFIGURADOR (páginas de línea individual)
 ===================================== */
 
-document.querySelectorAll(".linea-card").forEach(card => {
-    const lineaKey = card.dataset.linea;
-    const qtyLabel = card.querySelector(".linea-qty span");
-    const minus = card.querySelector('[data-qty="minus"]');
-    const plus = card.querySelector('[data-qty="plus"]');
-    const addBtn = card.querySelector(".linea-add");
+const configurador = document.querySelector(".configurador");
+
+if (configurador) {
+    const lineaKey = configurador.dataset.linea;
+    const qtyLabel = configurador.querySelector(".config-qty span");
+    const minus = configurador.querySelector('[data-qty="minus"]');
+    const plus = configurador.querySelector('[data-qty="plus"]');
+    const addBtn = configurador.querySelector(".config-add");
+    const colorBtns = configurador.querySelectorAll(".color-option-btn");
 
     let qty = 1;
+    let selectedColor = "gris";
 
     if (plus) {
         plus.addEventListener("click", () => {
@@ -233,21 +249,30 @@ document.querySelectorAll(".linea-card").forEach(card => {
         });
     }
 
+    colorBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            colorBtns.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            selectedColor = btn.dataset.color;
+        });
+    });
+
     if (addBtn) {
         addBtn.addEventListener("click", () => {
-            addToSelection(lineaKey, qty);
+            addToSelection(lineaKey, qty, selectedColor);
             qty = 1;
             qtyLabel.textContent = "1";
 
-            addBtn.textContent = "Agregada ✓";
+            addBtn.textContent = "Agregada a mi selección ✓";
             addBtn.classList.add("added");
+            openSelection();
             setTimeout(() => {
                 addBtn.textContent = "Agregar a mi selección";
                 addBtn.classList.remove("added");
-            }, 1400);
+            }, 1800);
         });
     }
-});
+}
 
 /* =====================================
    NEWSLETTER
