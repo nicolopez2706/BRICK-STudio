@@ -7,12 +7,13 @@ const WHATSAPP_NUMBER = "5493513320235"; // +54 9 351 332 0235
 const CONTACT_EMAIL = "Habitare@gmail.com";
 
 const LINEAS = {
-    aqua:     { nombre: "Aqua",     color: "#b6d5d4" },
-    ceniza:   { nombre: "Ceniza",   color: "#282627" },
-    mostaza:  { nombre: "Mostaza",  color: "#aa9c54" },
-    gres:     { nombre: "Gres",     color: "#c9b190" },
-    hueso:    { nombre: "Hueso",    color: "#eceeed" },
-    terra:    { nombre: "Terra",    color: "#705a4f" },
+    aqua:          { nombre: "Aqua",         color: "#b6d5d4" },
+    ceniza:        { nombre: "Ceniza",       color: "#282627" },
+    mostaza:       { nombre: "Mostaza",      color: "#aa9c54" },
+    gres:          { nombre: "Gres Claro",   color: "#c9b190" },
+    "gres-tostado":{ nombre: "Gres Tostado", color: "#81644a" },
+    hueso:         { nombre: "Hueso",        color: "#eceeed" },
+    terra:         { nombre: "Terra",        color: "#705a4f" },
 };
 
 const COMPONENT_COLORS = {
