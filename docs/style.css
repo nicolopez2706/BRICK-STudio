@@ -599,29 +599,48 @@ body.menu-open .mobile-nav {
 
 .dual-box {
     margin-top: 60px;
-    padding: 40px 8vw;
-    background: var(--cream-soft);
+    padding: 52px 8vw 56px;
+    background: linear-gradient(180deg, rgba(239, 233, 224, 0.7), rgba(239, 233, 224, 1));
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
     display: grid;
-    grid-template-columns: minmax(180px, 260px) 1fr;
+    grid-template-columns: minmax(220px, 310px) 1fr;
     gap: 32px 40px;
     align-items: start;
 }
 
+.dual-box-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
 .dual-box .overline {
     margin-top: 0;
-    font-size: clamp(2.9rem, 5vw, 5.25rem);
-    line-height: 0.86;
-    letter-spacing: -0.06em;
+    font-size: clamp(2.8rem, 4.9vw, 5.6rem);
+    line-height: 0.82;
+    letter-spacing: -0.08em;
+}
+
+.dual-box-heading h3 {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-size: clamp(1.4rem, 2vw, 2.1rem);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    color: var(--ink);
 }
 
 .dual-box-text {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
+    align-items: start;
 }
 
 .dual-box-text p {
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1.9;
     color: var(--muted);
 }
