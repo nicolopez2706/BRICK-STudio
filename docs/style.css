@@ -369,55 +369,33 @@ body.menu-open .mobile-nav {
     color: var(--muted);
 }
 
-.hero-visual {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Foto de portada: ocupa la derecha del hero y se funde con el fondo crema */
+.hero {
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.hero-copy {
     position: relative;
+    z-index: 1;
 }
 
-.hero-object {
-    width: min(640px, 92%);
-    position: relative;
-    animation: heroFloat 8s ease-in-out infinite;
-}
-
-.hero-object img {
-    width: 100%;
-    filter: drop-shadow(20px 30px 30px rgba(35, 28, 20, .18));
-}
-
-.hero-glow {
+.hero-photo {
     position: absolute;
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 247, 232, .8) 0%, rgba(255, 247, 232, 0) 70%);
-    animation: glowPulse 4s ease-in-out infinite;
-    pointer-events: none;
+    z-index: -1;
+    top: 72px;
+    right: 0;
+    bottom: 0;
+    width: 80%;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 16%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 16%);
 }
 
-.hero-glow-1 {
-    top: 22%;
-    left: 16%;
-}
-
-.hero-glow-2 {
-    bottom: 24%;
-    right: 30%;
-    width: 90px;
-    height: 90px;
-    animation-delay: 1.4s;
-}
-
-@keyframes heroFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-@keyframes glowPulse {
-    0%, 100% { opacity: .35; transform: scale(1); }
-    50% { opacity: .8; transform: scale(1.15); }
+.hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 62%;
 }
 
 .hero-bottom {
@@ -643,6 +621,19 @@ body.menu-open .mobile-nav {
     font-size: 13px;
     line-height: 1.9;
     color: var(--muted);
+}
+
+.dual-box-visual {
+    grid-column: 2;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 8px;
+}
+
+.dual-box-visual img {
+    width: min(560px, 100%);
+    height: auto;
+    filter: drop-shadow(0 22px 30px rgba(35, 28, 20, .14));
 }
 
 /* =====================================
@@ -1726,6 +1717,35 @@ body.selection-open .selection-backdrop {
    RESPONSIVE
 ===================================== */
 
+/* Portada: en pantallas angostas o casi cuadradas el texto ya no entra
+   sobre la foto, así que la foto pasa debajo del texto, a todo el ancho */
+@media (max-width: 1240px), (max-aspect-ratio: 3 / 2) {
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 120px;
+        padding-bottom: 0;
+        min-height: auto;
+    }
+
+    .hero-bottom {
+        display: none;
+    }
+
+    .hero-photo {
+        position: relative;
+        z-index: auto;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        width: auto;
+        aspect-ratio: 16 / 10;
+        margin: 56px -4.5vw 0;
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+}
+
 @media (max-width: 1000px) {
 
     .steps {
@@ -1766,13 +1786,13 @@ body.selection-open .selection-backdrop {
         min-height: auto;
     }
 
-    .hero-visual {
-        margin-top: 60px;
-    }
-
     .manifesto,
     .dual-box {
         grid-template-columns: 1fr;
+    }
+
+    .dual-box-visual {
+        grid-column: 1;
     }
 
     .product-grid {
@@ -1854,6 +1874,12 @@ body.selection-open .selection-backdrop {
 
     .hero {
         padding-top: 100px;
+    }
+
+    .hero-photo {
+        aspect-ratio: 4 / 3;
+        margin-left: -6vw;
+        margin-right: -6vw;
     }
 
     .hero h1 {
