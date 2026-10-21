@@ -1,12 +1,450 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=docs/index.html">
-    <title>HABITARE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HABITARE es un sistema modular de piezas cerámicas diseñado y producido en Córdoba, para dividir y transformar espacios sin obra.">
+
+    <title>HABITARE — Sistema modular cerámico</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <p><a href="docs/index.html">Entrar al sitio</a></p>
-    <script>window.location.replace('docs/index.html');</script>
+
+<header class="header">
+
+    <a href="index.html" class="logo">
+        <span class="logo-word">HABITARE</span>
+        <span class="logo-ring"></span>
+    </a>
+
+    <nav>
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="coleccion.html">Colección</a>
+        <a href="disenador.html">Diseñador</a>
+        <a href="como-comprar.html">¿Cómo comprar?</a>
+    </nav>
+
+    <div class="header-right">
+        <button class="open-selection">
+            Mi selección
+            <span class="selection-number">0</span>
+        </button>
+        <button class="menu-toggle" aria-label="Abrir menú"><span></span></button>
+    </div>
+
+</header>
+
+<nav class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="coleccion.html">Colección</a>
+    <a href="disenador.html">Diseñador</a>
+    <a href="como-comprar.html">¿Cómo comprar?</a>
+</nav>
+
+<!-- SELECCIÓN -->
+<div class="selection-backdrop"></div>
+
+<aside class="selection-panel">
+    <div class="selection-top">
+        <div>
+            <small>HABITARE</small>
+            <h2>Mi selección</h2>
+        </div>
+        <button class="close-selection" aria-label="Cerrar">×</button>
+    </div>
+
+    <div class="selection-content"></div>
+
+    <div class="selection-empty">
+        <h3>Todavía no armaste tu selección</h3>
+        <p>Recorré la colección y sumá las piezas que más te gusten para pedir tu cotización.</p>
+    </div>
+
+    <div class="selection-bottom">
+        <div class="selection-count-line"></div>
+        <p>Con tu selección armada, coordinamos cantidades, configuración y tiempos de producción a medida.</p>
+        <a class="quote-btn whatsapp" target="_blank" rel="noopener">SOLICITAR POR WHATSAPP →</a>
+        <a class="quote-btn email">ENVIAR POR EMAIL →</a>
+    </div>
+</aside>
+
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+
+    <div class="hero-copy">
+
+        <div class="hero-meta">
+            <span>HABITARE / CÓRDOBA</span>
+            <span>SISTEMA MODULAR</span>
+        </div>
+
+        <h1 class="hero-word">HABITARE</h1>
+        <p class="hero-tagline">"Una nueva forma de habitar"</p>
+
+        <p>
+            Sistema modular cerámico para transformar y adaptar el espacio
+            a tus necesidades: piezas cerámicas, una estructura regulable
+            y accesorios, diseñado y producido en Córdoba.
+        </p>
+
+        <div class="hero-ctas">
+            <a href="coleccion.html" class="btn-line">
+                VER LA COLECCIÓN
+                <span>→</span>
+            </a>
+            <a href="#concepto" class="btn-line quiet">
+                DESCUBRIR EL SISTEMA
+                <span>↓</span>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="hero-photo">
+        <img src="assets/images/portada-lineas.webp" alt="Las siete líneas de color de HABITARE sobre plintos de piedra en un espacio luminoso" width="1342" height="752" fetchpriority="high">
+    </div>
+
+    <span class="hero-bottom">DESLIZÁ PARA EXPLORAR</span>
+
+</section>
+
+
+<!-- QUÉ ES HABITARE -->
+<section class="intro" id="que-es">
+
+    <span class="overline">SISTEMA</span>
+    <h2>¿Qué es<br><i>Habitare?</i></h2>
+
+    <div class="intro-lead">
+        <p>Sistema modular cerámico para transformar y adaptar el espacio a tus necesidades.</p>
+        <p>
+            HABITARE es un sistema compuesto por piezas cerámicas, una estructura
+            regulable y accesorios que permite dividir, filtrar, personalizar y
+            equipar los espacios según las necesidades de cada usuario.
+        </p>
+    </div>
+
+    <div class="resuelve">
+
+        <div class="resuelve-copy">
+            <span class="overline">¿QUÉ RESUELVE?</span>
+            <p style="margin-top:18px;">
+                Espacios que cambian necesitan límites que también puedan cambiar.
+                Los espacios compartidos contemporáneos concentran cada vez más
+                actividades dentro de una misma superficie.
+            </p>
+            <p>
+                Trabajar, descansar, reunirse, almacenar o generar privacidad
+                pueden requerir configuraciones diferentes a lo largo del tiempo.
+                Frente a soluciones rígidas o permanentes, HABITARE permite
+                reorganizar el espacio mediante un límite permeable, adaptable
+                y reversible.
+            </p>
+        </div>
+
+        <div class="resuelve-grid">
+
+            <div class="resuelve-item">
+                <span class="ring"></span>
+                <h4>Divide sin cerrar</h4>
+                <p>Permite delimitar sectores y generar privacidad sin aislar completamente los ambientes.</p>
+            </div>
+
+            <div class="resuelve-item">
+                <span class="ring"></span>
+                <h4>Filtra</h4>
+                <p>Sus vacíos mantienen el paso de la luz, las visuales y la relación entre ambos lados del espacio.</p>
+            </div>
+
+            <div class="resuelve-item">
+                <span class="ring"></span>
+                <h4>Se adapta</h4>
+                <p>La cantidad y disposición de las columnas puede variar según las dimensiones y necesidades de cada ambiente.</p>
+            </div>
+
+            <div class="resuelve-item">
+                <span class="ring"></span>
+                <h4>Equipa</h4>
+                <p>La incorporación de accesorios permite sumar nuevas funciones al sistema.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONCEPTO -->
+<section class="manifesto" id="concepto">
+
+    <div class="side-label">02 / CONCEPTO</div>
+
+    <div class="manifesto-inner">
+
+        <span class="overline">DISEÑO CORDOBÉS</span>
+
+        <h2>
+            Diseño<br>
+            <i>Cordobés.</i>
+        </h2>
+
+        <div class="manifesto-text">
+            <p>
+                HABITARE es un sistema modular diseñado y producido en Córdoba,
+                pensado para acompañar nuevas formas de habitar.
+            </p>
+            <p>
+                A través de piezas cerámicas y accesorios intercambiables, permite
+                crear divisiones livianas, filtros visuales y configuraciones
+                funcionales sin intervenir el espacio de manera permanente.
+            </p>
+        </div>
+
+        <div class="pull-quote">
+            <p>Más que separar ambientes, HABITARE propone transformarlas.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MÓDULO -->
+<section class="product" id="modulo">
+
+    <div class="section-heading">
+        <div>
+            <span class="overline">COLECCIÓN / 01</span>
+            <h2>El módulo</h2>
+        </div>
+        <span class="section-index">03 / 05</span>
+    </div>
+
+    <div class="product-grid">
+
+        <div class="product-details">
+
+            <span class="product-code">HABITARE — MÓDULO</span>
+
+            <h3>Piezas de gres, pensadas para combinarse.</h3>
+
+            <p>
+                Cada módulo está compuesto por piezas cerámicas de gres, fabricadas
+                mediante proceso de colada en moldes.
+            </p>
+            <p>
+                Su morfología permite combinar, repetir y organizar las piezas en
+                distintas configuraciones, generando un sistema flexible y adaptable.
+            </p>
+
+            <div class="specifications">
+                <div><span>MATERIAL</span><strong>Cerámica de gres</strong></div>
+                <div><span>PROCESO</span><strong>Colada en moldes</strong></div>
+                <div><span>MORFOLOGÍA</span><strong>Dual — dos caras, dos lecturas</strong></div>
+                <div><span>INSTALACIÓN</span><strong>Sin obra</strong></div>
+            </div>
+
+        </div>
+
+        <div class="product-display">
+            <img src="assets/images/panel-instalado.webp" alt="Panel HABITARE instalado, columna completa de módulos con guías" loading="lazy">
+        </div>
+
+    </div>
+
+    <div class="dual-box">
+        <div class="dual-box-heading">
+            <span class="overline">DISEÑO DUAL</span>
+            <h3>Dos caras, dos lecturas.</h3>
+        </div>
+        <div class="dual-box-text">
+            <p>
+                Cada pieza posee dos caras con morfologías diferentes, lo que
+                permite variar la composición visual del sistema.
+            </p>
+            <p>
+                Esta dualidad habilita distintas configuraciones estéticas y
+                funcionales, adaptándose a la identidad de cada espacio y a las
+                necesidades de cada usuario.
+            </p>
+        </div>
+        <div class="dual-box-visual">
+            <img src="assets/images/pieza-dual-natural.webp" alt="Las dos caras de una pieza HABITARE: cara ondulada y cara con agujeros" width="1037" height="404" loading="lazy">
+        </div>
+    </div>
+
+</section>
+
+
+<!-- STATEMENT -->
+<section class="statement">
+
+    <h2>Una solución<br>para espacios<br>que cambian</h2>
+
+    <div class="statement-list">
+
+        <div class="statement-item">
+            <h4>Divide sin cerrar</h4>
+            <p>Genera privacidad sin aislar completamente el ambiente.</p>
+        </div>
+
+        <div class="statement-item">
+            <h4>Se adapta al uso</h4>
+            <p>Permite reorganizar el espacio según la actividad, el momento o la necesidad.</p>
+        </div>
+
+        <div class="statement-item">
+            <h4>No requiere obra</h4>
+            <p>Su sistema de instalación evita intervenciones permanentes.</p>
+        </div>
+
+        <div class="statement-item">
+            <h4>Aporta identidad</h4>
+            <p>La cerámica suma textura, calidez y presencia material.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CÓMO FUNCIONA -->
+<section class="proceso" id="como-funciona">
+
+    <div class="section-heading">
+        <div>
+            <span class="overline">PROCESO</span>
+            <h2>¿Cómo<br><i>funciona?</i></h2>
+        </div>
+        <span class="section-index">04 / 05</span>
+    </div>
+
+    <p class="proceso-intro">
+        HABITARE se organiza a partir de guías superior e inferior que permiten
+        montar columnas verticales de piezas cerámicas. El sistema se instala sin
+        obra y permite configurar divisiones, filtros visuales, soportes o
+        sectores funcionales dentro de un mismo ambiente.
+    </p>
+
+    <div class="steps">
+
+        <div class="step">
+            <span class="step-number">01</span>
+            <h3>Instalá las guías</h3>
+            <p>Se colocan una guía superior y una inferior para definir la estructura del sistema.</p>
+        </div>
+
+        <div class="step">
+            <span class="step-number">02</span>
+            <h3>Armá las columnas</h3>
+            <p>Las piezas cerámicas se organizan verticalmente, a través de un encastre, según la configuración deseada.</p>
+        </div>
+
+        <div class="step">
+            <span class="step-number">03</span>
+            <h3>Personalizá el uso</h3>
+            <p>El sistema permite incorporar accesorios y adaptar la composición a distintas actividades.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- USOS -->
+<section class="usos" id="usos">
+
+    <div class="section-heading">
+        <div>
+            <span class="overline">APLICACIONES</span>
+            <h2>Usos</h2>
+        </div>
+        <span class="section-index">05 / 05</span>
+    </div>
+
+    <div class="usos-gallery" aria-label="Aplicaciones del sistema Habitare C">
+        <figure class="uso-photo uso-photo-large">
+            <img src="assets/images/pieza-dual-natural.webp" alt="Sistema Habitare C cerrando un ambiente completo" loading="lazy">
+        </figure>
+        <figure class="uso-photo">
+            <img src="assets/images/pieza-dual-natural.webp" alt="Columna Habitare C funcionando como partición de ambiente" loading="lazy">
+        </figure>
+        <figure class="uso-photo">
+            <img src="assets/images/pieza-dual-natural.webp" alt="Columna Habitare C como estante flotante" loading="lazy">
+        </figure>
+        <figure class="uso-photo uso-photo-wide">
+            <img src="assets/images/pieza-dual-natural.webp" alt="Sistema Habitare C como recurso decorativo y funcional" loading="lazy">
+        </figure>
+    </div>
+
+</section>
+
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+
+    <span class="overline on-taupe">NOVEDADES</span>
+
+    <p>Recibí información sobre nuevas configuraciones, accesorios y lanzamientos de HABITARE.</p>
+
+    <form class="newsletter-form">
+        <input type="email" placeholder="TU EMAIL" required>
+        <button type="submit">SUSCRIBIRTE →</button>
+    </form>
+
+    <span class="newsletter-note"></span>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+
+    <div class="footer-top">
+
+        <div class="footer-col">
+            <span>DIRECCIÓN</span>
+            <p>Av. República de China<br>Valle Escondido<br>Córdoba, Argentina</p>
+        </div>
+
+        <div class="footer-col">
+            <span>CONTACTO</span>
+            <a href="mailto:Habitare@gmail.com">Habitare@gmail.com</a>
+            <a href="https://wa.me/5493513320235" target="_blank" rel="noopener">+54 9 351 332 0235</a>
+        </div>
+
+        <div class="footer-col footer-nav">
+            <span>NAVEGACIÓN</span>
+            <a href="coleccion.html">Colección</a>
+            <a href="disenador.html">Diseñador</a>
+            <a href="como-comprar.html">¿Cómo comprar?</a>
+        </div>
+
+    </div>
+
+    <div class="footer-word">HABITARE.</div>
+
+    <div class="footer-bottom">
+        <span>MATERIA / COLOR / ARQUITECTURA</span>
+        <span>© 2026 HABITARE</span>
+    </div>
+
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
